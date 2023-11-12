@@ -1,0 +1,34 @@
+procedure PencocokanString(input P : string, T : string,
+ 		 n, m : integer, output idx : integer)
+{ Masukan: pattern P yang panjangnya m dan teks T yang
+panjangnya n. Teks T direpresentasika sebagai string
+(array of character)
+Keluaran: lokasi awal kecocokan (idx)
+}
+
+Deklarasi
+ i : integer
+ ketemu : boolean
+
+Algoritma:
+ i0
+ ketemufalse
+ while (i  n-m) and (not ketemu) do
+ 	j1
+ 	while (j  m) and (Pj = Ti+j ) do
+		jj+1
+ 	endwhile
+ 	{ j > m or Pj  Ti+j }
+
+ 	if j = m then { kecocokan string ditemukan }
+		ketemutrue
+ 	else
+		ii+1 {geser pattern satu karakter ke kanan teks }
+ 	endif
+ endfor
+ { i > n – m or ketemu }
+ if ketemu then
+ 	idxi+1
+ else
+ 	idx-1
+ endif
